@@ -1,0 +1,90 @@
+﻿ @model IEnumerable<MVC_TUTORIAL_5_12_23.Models.Traderecord>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+   <h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.INDEX)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PRICE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BORS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SL)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PROFIT)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TOTAL)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+ @*   @foreach (var item in Model) {  *@
+        <tr>
+            <td id="dvid">
+                
+            </td>
+            <td id="dvdate">
+               
+            </td>
+            <td>
+               
+            </td>
+            <td>
+               
+            </td>
+            <td>
+                
+            </td>
+            <td>
+               
+            </td>
+            <td>
+                
+            </td>
+            <td>
+                
+            </td>
+            <td>
+               @*  @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ }) *@
+            </td>
+        </tr>
+@*  }  *@
+    </tbody>
+</table>  
+
+
+<button class="btn btn-outline-info" onclick="showtab()">SHOW RECORD</button>
+
+<script>
+    function showtab() { 
+        $.ajax({
+            url: "Traderecord/record",
+             
+        });
+    };
+</script>

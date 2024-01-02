@@ -1,0 +1,61 @@
+﻿<style>
+    table {
+        border-collapse: separate;
+    }
+
+    .tbl-container {
+        max-height: fit-content;
+        max-width: 90%;
+    }
+
+    .tbl-fixed {
+        overflow: scroll;
+        height: fit-content;
+        max-height: 60vh;
+        margin-top: 40px;
+    }
+
+    table th, thead {
+        position: sticky;
+        top: 0px;
+        text-align: center;
+        font-size: 18px;
+        background-color: lightseagreen;
+        border: 1px solid black;
+    }
+
+    table td {
+        text-align: center;
+    }
+</style>
+<div class="tbl-fixed">
+<table class="table table-bordered table-responsive-sm" style="border-collapse:separate; background-color:lightblue; margin-bottom:0px;">
+    <thead class="bg-info">
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+               Comments
+            </th>
+            <th>
+                Action 
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                1
+            </td>
+             <td>
+                Increase the pages...
+            </td>
+            <td>
+                <a href="~/Book/Onebook" class="btn btn-sm text-white bg-warning">EDIT</a>|
+                <a href="#" class="btn btn-sm text-white bg-danger">DELETE</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>

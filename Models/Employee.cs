@@ -1,17 +1,22 @@
-﻿namespace MVC_TUTORIAL_5_12_23.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MVC_TUTORIAL_5_12_23.Models
 {
     public class Employee
     {
+        [Key]
+        public int ID { get; set; }
+        [Required]
         public string FirstName { get; set; }
-
+        [Required]  
         public string LastName { get; set; }
-
+        [Required]
         public int Age { get; set; }
-
-        public int Number { get; set; }
-
+        [Required]
         public int Experience { get; set; }
-
-        public int MyProperty { get; set; }
+        [Required]
+        public int Mobile { get; set; }
+        [Required]
+        public int DepartmentID { get; set; }
     }
 }

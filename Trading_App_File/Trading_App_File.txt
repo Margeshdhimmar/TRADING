@@ -1,16 +1,12 @@
-﻿@model IEnumerable<Employee>
-@{
-    ViewData["Title"] = "Index";
-    // Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 <style>
-   
+    table {
+        border-collapse: separate;
+    }
 
-      .tbl-container {
-            max-height: fit-content;
-            max-width: 90%;
-        } 
+    /* .tbl-container {
+        max-height: fit-content;
+        max-width: 90%;
+    } */
 
     .tbl-fixed {
         overflow: scroll;
@@ -44,8 +40,8 @@
     </h1>
 
     <div class="tbl-fixed">
-        <table class="table table-bordered table-responsive table-sm" id="datatable" style="border-collapse:separate; background-color:lightblue; margin-bottom:0px;">
-
+    <table class="table table-bordered table-responsive table-sm"id="datatable"style="border-collapse:separate; background-color:lightblue; margin-bottom:0px;">
+       
             <thead class="bg-info">
                 <tr>
                     <th>
@@ -54,7 +50,7 @@
                     <th>
                         FirstName
                     </th>
-                    <th>
+                     <th>
                         LastName
                     </th>
                     <th>
@@ -72,14 +68,14 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model)
+                @foreach(var item in Model)
                 {
                     <tr>
                         <td>
-                            @item.ID
+                          @item.ID
                         </td>
                         <td>
-                            @item.FirstName
+                           @item.FirstName
                         </td>
                         <td>
                             @item.LastName
@@ -94,19 +90,18 @@
                             @item.Mobile
                         </td>
                         <td>
-                            <a class="btn btn-sm text-white bg-primary" asp-action="Edit" asp-controller="Employee" asp-route-id="@item.ID">EDIT</a>|
-                            <a class="btn btn-sm text-white bg-danger" asp-action="Delete" asp-controller="Employee" asp-route-id="@item.ID">DELETE</a>
+                                <a class="btn btn-sm text-white bg-primary" asp-action="Edit" asp-controller="Employee" asp-route-id="@item.ID" >EDIT</a>|
+                                <a class="btn btn-sm text-white bg-danger"  asp-action="Delete" asp-controller="Employee" asp-route-id="@item.ID" >DELETE</a>
                         </td>
                     </tr>
                 }
-
+       
             </tbody>
-
-        </table>
+        
+    </table>  
     </div>
 </div>
 
-@* 
-@section scripts {
+@section scripts{
     <script src="~/js/datatables.js"></script>
-} *@
+}

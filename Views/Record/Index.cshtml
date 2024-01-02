@@ -1,0 +1,136 @@
+﻿@model IEnumerable<Traderecord>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ <table class="table table table-striped table-dark">
+    <thead>
+        <tr>
+            <th>
+                DATE
+            </th>
+            <th>
+                INDEX
+            </th>
+             <th>
+                 PRICE
+            </th>
+             <th>
+                 B/S
+            </th>
+            <th>
+               SL
+            </th>
+            <th>
+               INCR
+            </th>
+             <th>
+                 P/L
+            </th>
+            <th>
+                TOTAL
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+         @foreach(var item in Model)
+        {
+            <tr>
+                <td>
+                   @item.DATE
+                </td>
+                <td>
+                   @item.INDEX
+                </td>
+                <td>
+                   @item.PRICE
+                </td>
+                <td>
+                   @item.BORS
+                </td>
+                <td>
+                   @item.SL
+                </td>
+                <td>
+                    @item.PROFIT
+                </td>
+                <td>
+                   @item.TOTAL
+                </td>
+            </tr>
+        } 
+        @*     <tr>
+            <td>
+                11/12/23
+            </td>
+            <td>
+                47000
+            </td>
+            <td>
+                150
+            </td>
+            <td>
+                B
+            </td>
+            <td>
+                130
+            </td>
+            <td>
+                200
+            </td>
+            <td>
+                50
+            </td>
+            <td>
+                750
+            </td>
+        </tr>
+        <tr>
+            <td>
+                11/12/23
+            </td>
+            <td>
+                47000
+            </td>
+            <td>
+                150
+            </td>
+            <td>
+                B
+            </td>
+            <td>
+                130
+            </td>
+            <td>
+                200
+            </td>
+            <td>
+                50
+            </td>
+            <td>
+                750
+            </td>
+        </tr> *@ 
+    </tbody>
+</table> 
+<button id="save" class="btn btn-group-sm bg-danger" onclick="fun()" >Submit</button>
+ <script>
+   function fun()
+   {
+       alert("MMM");
+      
+       $.ajax({
+            url: "/Record/Index",
+           method: "Get",
+           success: function(data) {
+                console.log(data);
+           },
+           error: function(err) {
+               console.log(err);
+           }
+       })
+   }
+</script> 
+
+
